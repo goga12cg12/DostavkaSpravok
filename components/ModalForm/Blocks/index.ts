@@ -8,3 +8,4 @@ export * from "./Pool";
 export * from "./Pregnancy";
 export * from "./Review";
 export * from "./SickLeave";
+export * from "./Driver";

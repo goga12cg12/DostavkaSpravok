@@ -113,6 +113,15 @@ export default async (req, res) => {
 Адрес проживания:  ${details?.address}
 Диагноз:  ${details?.diagnosis}`;
         break;
+      case "Справка для водителей (Форма 083/о)":
+        text += `Тип справки:  <b>Справка для водителей (Форма 083/о)</b>
+Место рождения:  ${details?.bornIn}
+Прописка:  ${details?.address}
+Категория ТС:  ${
+          details?.carCategory?.split(" - ")?.[0]?.trim() ||
+          "⚠ Что-то поломалось"
+        }`;
+        break;
     }
 
     text += `\n\nАдрес доставки:  ${shipTo}`;

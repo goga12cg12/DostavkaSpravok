@@ -11,6 +11,8 @@ import { PregnancyWeekValidation } from "./PregnancyWeek";
 import { SexValidation } from "./Sex";
 import { ToValidation } from "./To";
 import { ToWherePlaceValidation } from "./ToWherePlace";
+import { BornInValidation } from "./BornIn";
+import { CarCategoryValidation } from "./CarCategory";
 
 export type Detail =
   | "amount"
@@ -22,7 +24,9 @@ export type Detail =
   | "pregnancyWeek"
   | "sex"
   | "to"
-  | "toWherePlace";
+  | "toWherePlace"
+  | "bornIn"
+  | "carCategory";
 
 interface FieldArray {
   field: Detail;
@@ -40,11 +44,15 @@ const fields: FieldArray[] = [
   { field: "sex", validation: SexValidation },
   { field: "to", validation: ToValidation },
   { field: "toWherePlace", validation: ToWherePlaceValidation },
+  { field: "bornIn", validation: BornInValidation },
+  { field: "carCategory", validation: CarCategoryValidation },
 ];
 
 const initialValidation = {
   address: false,
   amount: false,
+  bornIn: false,
+  carCategory: false,
   diagnosis: false,
   diseases: false,
   from: false,

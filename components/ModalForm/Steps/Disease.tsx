@@ -16,6 +16,7 @@ import {
   MedicalBook,
   Pool,
   Pregnancy,
+  Driver,
 } from "components/ModalForm/Blocks";
 import { usePrefferedTypeContext } from "components/ModalForm/PrefferedTypeContext";
 
@@ -67,9 +68,9 @@ export const Disease: React.FC<DiseaseProps> = () => {
       )}
       {field.value === "Для поступающих в ВУЗ (Форма 086/о)" && <Bachelor />}
       {field.value === "Выписка из медкарты (Форма 027/о)" && <Docket />}
-      {field.value === "Справка для водителей (Форма 083/о)" && <Docket />}
-      {field.value === "Сертификат Психиатра" && <Docket />}
-      {field.value === "Сертификат Нарколога" && <Docket />}
+      {field.value === "Справка для водителей (Форма 083/о)" && <Driver />}
+      {/* {field.value === "Сертификат Психиатра" && <Docket />}
+      {field.value === "Сертификат Нарколога" && <Docket />} */}
     </>
   );
 };
