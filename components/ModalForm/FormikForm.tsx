@@ -1,15 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-
 import { Formik, Form, FormikConfig, FormikValues } from "formik";
-import { ObjectSchema } from "yup";
+import * as yup from "yup";
 
 import { Actions, Stepper } from "components";
 
 import { formValidationContext } from "components/ModalForm/FormValidationContext";
 
 export const validationSchemaContext = React.createContext<
-  (validationSchema: ObjectSchema) => void
+  (validationSchema: yup.AnyObjectSchema) => void
 >(() => {});
 
 export interface FormikFormProps extends FormikConfig<FormikValues> {
