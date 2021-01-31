@@ -3,17 +3,6 @@ import styled from "styled-components";
 import { Element } from "react-scroll";
 import { Bottom, ExploreLinks, SocialLinks } from "components/SiteFooter";
 
-const StyledLink = styled.a`
-  color: var(--color-gray-2);
-  text-decoration: underline;
-  transition: var(--transition-ease);
-
-  &:hover,
-  &:focus {
-    color: var(--color-gray-1);
-  }
-`;
-
 interface SiteFooterProps {}
 
 export const SiteFooter: React.FC<SiteFooterProps> = () => (

@@ -10,7 +10,7 @@ export type Step = "personalInfo" | "contact";
 
 interface StepsArray {
   field: Step;
-  validation: yup.ObjectSchema<object>;
+  validation: yup.AnyObjectSchema;
 }
 
 const fields: StepsArray[] = [
@@ -23,7 +23,7 @@ const initialValidation = {
   contact: null,
 };
 
-export const formValidationContext = React.createContext<Object>({});
+export const formValidationContext = React.createContext<object>({});
 export const formValidateContext = React.createContext<
   (step: Step, validation: boolean) => void
 >(() => {});

@@ -1,5 +1,10 @@
 {
-  "extends": ["alloy", "alloy/react", "alloy/typescript", "plugin:jsx-a11y/recommended"],
+  "extends": [
+    "alloy",
+    "alloy/react",
+    "alloy/typescript",
+    "plugin:jsx-a11y/recommended"
+  ],
   "plugins": ["jsx-a11y"],
   "env": {
     "browser": true,
@@ -13,6 +18,7 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-interface": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": "off"
   }
 }

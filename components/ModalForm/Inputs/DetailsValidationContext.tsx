@@ -26,7 +26,7 @@ export type Detail =
 
 interface FieldArray {
   field: Detail;
-  validation: yup.ObjectSchema<object>;
+  validation: yup.AnyObjectSchema;
 }
 
 const fields: FieldArray[] = [
@@ -55,9 +55,9 @@ const initialValidation = {
   toWherePlace: false,
 };
 
-export const detailsValidationContext = React.createContext<
-  yup.ObjectSchema<object>
->(yup.object());
+export const detailsValidationContext = React.createContext<yup.AnyObjectSchema>(
+  yup.object()
+);
 export const detailsValidateContext = React.createContext<
   (field: Detail, status: boolean) => void
 >(() => {});
