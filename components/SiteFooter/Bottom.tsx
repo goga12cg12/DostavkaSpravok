@@ -59,7 +59,7 @@ export const Bottom: React.FC<BottomProps> = () => {
         © {date.getFullYear()}
       </div>
       <ul className="links">
-        <FooterLink href="https://t.me/doktor_prosto">
+        <FooterLink href="https://t.me/dostavkaspravok">
           <img src="images/icons/telegram.svg" alt="telegram icon" />
           Мы в Telegram
         </FooterLink>

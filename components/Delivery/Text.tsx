@@ -109,7 +109,7 @@ export const DeliveryText: React.FC<DeliveryTextProps> = () => (
     <p>
       Есть вопросы по доставке?{" "}
       <a
-        href="https://t.me/doktor_prosto"
+        href="https://t.me/dostavkaspravok"
         target="_blank"
         rel="noopener noreferrer"
       >

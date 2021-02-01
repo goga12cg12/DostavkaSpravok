@@ -74,7 +74,7 @@ export const FreeFormText: React.FC<FreeFormTextProps> = () => (
       <Button
         className="text-button"
         as="a"
-        href="https://t.me/doktor_prosto"
+        href="https://t.me/dostavkaspravok"
         target="_blank"
         rel="noopener noreferrer"
       >
