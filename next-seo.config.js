@@ -9,7 +9,7 @@ export default {
       "Быстрая и надёжная выдача больничных листов и справок онлайн на все случаи жизни.",
     images: [
       {
-        url: "https://dostavkaspravok.vercel.app/images/MainPreview.jpg",
+        url: "https://dostavka-spravok.vercel.app//images/MainPreview.jpg",
         width: 1200,
         height: 628,
         alt: "Справки Онлайн. Быстро и без волокиты",
