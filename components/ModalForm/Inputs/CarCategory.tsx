@@ -15,7 +15,7 @@ export const CarCategory: React.FC<CarCategoryProps> = () => {
 
   return (
     <Select
-      name="carCategory"
+      name="details.carCategory"
       title="Категория транспортного средства"
       type="text"
       placeholder="Выберите тип транспортного средства"

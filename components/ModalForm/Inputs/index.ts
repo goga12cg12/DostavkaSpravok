@@ -10,3 +10,4 @@ export * from "./To";
 export * from "./ToWherePlace";
 export * from "./BornIn";
 export * from "./CarCategory";
+export * from "./Profession";

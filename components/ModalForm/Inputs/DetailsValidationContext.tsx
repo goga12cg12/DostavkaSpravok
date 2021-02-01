@@ -13,6 +13,7 @@ import { ToValidation } from "./To";
 import { ToWherePlaceValidation } from "./ToWherePlace";
 import { BornInValidation } from "./BornIn";
 import { CarCategoryValidation } from "./CarCategory";
+import { ProfessionValidation } from "./Profession";
 
 export type Detail =
   | "amount"
@@ -26,7 +27,8 @@ export type Detail =
   | "to"
   | "toWherePlace"
   | "bornIn"
-  | "carCategory";
+  | "carCategory"
+  | "profession";
 
 interface FieldArray {
   field: Detail;
@@ -46,6 +48,7 @@ const fields: FieldArray[] = [
   { field: "toWherePlace", validation: ToWherePlaceValidation },
   { field: "bornIn", validation: BornInValidation },
   { field: "carCategory", validation: CarCategoryValidation },
+  { field: "profession", validation: ProfessionValidation },
 ];
 
 const initialValidation = {
@@ -61,6 +64,7 @@ const initialValidation = {
   sex: false,
   to: false,
   toWherePlace: false,
+  profession: false,
 };
 
 export const detailsValidationContext = React.createContext<yup.AnyObjectSchema>(

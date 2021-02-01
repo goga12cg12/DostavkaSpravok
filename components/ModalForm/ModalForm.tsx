@@ -33,6 +33,8 @@ const initialValues: Form = {
     sex: "Мужчина",
     to: prettyDate(new Date()),
     toWherePlace: "",
+    carCategory: "В – Легковые автомобили",
+    profession: "",
   },
 
   shipTo: "",
@@ -48,9 +50,7 @@ export const ModalForm: React.FC = () => {
       <FormikForm
         error={error}
         initialValues={initialValues}
-        onSubmit={async (values: Form, { setSubmitting, resetForm }) => {
-          console.log(values);
-
+        onSubmit={async (values: Form, { setSubmitting, setStep }) => {
           setSubmitting(true);
           setError("");
 
@@ -58,7 +58,7 @@ export const ModalForm: React.FC = () => {
 
           if (resp.ok) {
             setOpen(true);
-            resetForm();
+            setStep(0);
             closeModal();
           } else {
             setError(resp?.message);

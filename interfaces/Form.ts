@@ -34,6 +34,8 @@ export interface Form {
     sex?: "Мужчина" | "Женщина";
     to?: string;
     toWherePlace?: string;
+    carCategory?: string;
+    profession?: string;
   };
 
   // contact information

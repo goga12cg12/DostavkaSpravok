@@ -1,6 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Formik, Form, FormikConfig, FormikValues } from "formik";
+import {
+  Formik,
+  Form,
+  FormikConfig,
+  FormikValues,
+  FormikHelpers,
+} from "formik";
 import * as yup from "yup";
 
 import { Actions, Stepper } from "components";
@@ -13,6 +19,12 @@ export const validationSchemaContext = React.createContext<
 
 export interface FormikFormProps extends FormikConfig<FormikValues> {
   error?: string;
+  onSubmit: (
+    values: FormikValues,
+    formikHelpers: FormikHelpers<FormikValues> & {
+      setStep: (newValue: number) => void;
+    }
+  ) => Promise<any>;
 }
 
 export const FormikForm: React.FC<FormikFormProps> = ({
@@ -50,7 +62,7 @@ export const FormikForm: React.FC<FormikFormProps> = ({
         validationSchema={validationSchema}
         onSubmit={async (values, helpers) => {
           if (isLastStep) {
-            await props.onSubmit(values, helpers);
+            await props.onSubmit(values, { ...helpers, setStep });
           } else {
             getNextStep();
             helpers.setFieldTouched("details", false);
@@ -86,14 +98,25 @@ const FormWrapper = styled.div`
   & form {
     display: grid;
     gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
 
     @media (min-width: 640px) {
       grid-template-columns: 1fr 1fr;
 
       & *[data-wide="true"] {
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: -1;
       }
+    }
+
+    & hr {
+      background-color: var(--color-cool-gray-3);
+      border: none;
+      display: block;
+      height: 1px;
+      width: 100%;
+      grid-column-start: 1;
+      grid-column-end: -1;
     }
 
     & > .error {

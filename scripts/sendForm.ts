@@ -15,8 +15,6 @@ export const sendForm = async (props: Form) => {
       body: JSON.stringify(props),
     }).then((resp) => resp.json());
 
-    console.log(resp);
-
     return resp;
   } catch (e) {
     return { ok: false, message: String(e) };

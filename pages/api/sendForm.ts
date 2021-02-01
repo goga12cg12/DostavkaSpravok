@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { truncate, prettyLocalDate } from "scripts";
 import { Form } from "interfaces/Form";
 
@@ -5,6 +6,14 @@ export default async (req, res) => {
   const token = process.env.BOT_TOKEN;
   const chatId = process.env.GROUP_ID;
 
+  if (!token) {
+    res.status(400).json({ ok: false, message: "No Bot Token" });
+    return;
+  }
+  if (!chatId) {
+    res.status(400).json({ ok: false, message: "No Chat Id" });
+    return;
+  }
   const body: Form = req.body;
 
   try {
@@ -113,6 +122,7 @@ export default async (req, res) => {
 Адрес проживания:  ${details?.address}
 Диагноз:  ${details?.diagnosis}`;
         break;
+
       case "Справка для водителей (Форма 083/о)":
         text += `Тип справки:  <b>Справка для водителей (Форма 083/о)</b>
 Место рождения:  ${details?.bornIn}
@@ -121,6 +131,18 @@ export default async (req, res) => {
           details?.carCategory?.split(" - ")?.[0]?.trim() ||
           "⚠ Что-то поломалось"
         }`;
+        break;
+
+      case "Сертификат Психиатра":
+        text += `Тип справки:  <b>Сертификат Психиатра</b>
+Прописка:  ${details?.address}
+Профессия:  ${details?.profession}`;
+        break;
+
+      case "Сертификат Нарколога":
+        text += `Тип справки:  <b>Сертификат Нарколога</b>
+Прописка:  ${details?.address}
+Профессия:  ${details?.profession}`;
         break;
     }
 

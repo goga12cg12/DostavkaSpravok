@@ -9,3 +9,5 @@ export * from "./Pregnancy";
 export * from "./Review";
 export * from "./SickLeave";
 export * from "./Driver";
+export * from "./Narcology";
+export * from "./Psychiatrist";

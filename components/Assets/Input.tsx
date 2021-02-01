@@ -19,7 +19,7 @@ export const InputBase = styled.label`
     font-size: 16px;
     line-height: 24px;
     outline: none;
-    padding: 16px 24px;
+    padding: 16px clamp(16px, 4vw, 24px);
     width: 100%;
 
     &::placeholder {

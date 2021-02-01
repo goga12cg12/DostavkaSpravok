@@ -15,7 +15,6 @@ export function prettyDate(date: Date): string {
 
     return `${year}-${month}-${day}`;
   } catch (e) {
-    console.log(e);
     return `yyyy-mm-dd`;
   }
 }
