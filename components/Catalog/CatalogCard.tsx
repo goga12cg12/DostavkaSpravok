@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import { usePrefferedTypeContext } from "components/ModalForm/PrefferedTypeContext";
 import { openModal } from "scripts";
@@ -26,10 +27,6 @@ const Wrapper = styled.button`
   height: 100%;
   width: 100%;
   overflow: hidden;
-
-  &:hover {
-    transform: translateY(-2%);
-  }
 
   & > div.image-wrapper {
     margin-bottom: 20px;
@@ -60,12 +57,26 @@ const Wrapper = styled.button`
     font-size: 22px;
     font-weight: 500;
     line-height: 26px;
+
+    display: flex;
+    align-items: center;
+
+    & svg {
+      color: inherit;
+      height: 22px;
+      width: 22px;
+      margin-left: 8px;
+      transition: var(--transition-ease);
+    }
+  }
+  &:hover {
+    transform: translateY(-2%);
   }
 `;
 
 interface CatalogCardProps {
-  title: string;
-  footer: string;
+  title: any;
+  footer: any;
   src: string;
   alt: string;
   type: FormType;
@@ -93,7 +104,10 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
         </div>
       </div>
       <div className="card-header">{title}</div>
-      <div className="card-footer">{footer}</div>
+      <div className="card-footer">
+        {footer}
+        <ArrowForwardIcon />
+      </div>
     </Wrapper>
   );
 };

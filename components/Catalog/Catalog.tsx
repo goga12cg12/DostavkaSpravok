@@ -20,8 +20,12 @@ const Wrapper = styled.div`
 const Grid = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: clamp(12px, 4vw, 20px);
   margin: 20px 0;
+
+  @media (max-width: 460px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 interface CatalogProps {}
@@ -89,7 +93,12 @@ export const Catalog: React.FC<CatalogProps> = () => {
             </li>
             <li>
               <CatalogCard
-                title="Абитуриентам"
+                title={
+                  <>
+                    <span>Абитуриентам</span>{" "}
+                    <span style={{ whiteSpace: "nowrap" }}>(Форма 086/о)</span>
+                  </>
+                }
                 footer="200 ₴"
                 src="/images/cards/Job.svg"
                 alt=""
@@ -132,15 +141,6 @@ export const Catalog: React.FC<CatalogProps> = () => {
                 type="Сертификат Нарколога"
               />
             </li>
-            {/* <li>
-              <CatalogCard
-                title="Сертификат Нарколога + Психиатра"
-                footer="500 ₴"
-                src="/images/cards/Star.svg"
-                alt=""
-                type="Профосмотр"
-              />
-            </li> */}
           </Grid>
           <FreeFormBanner />
         </div>

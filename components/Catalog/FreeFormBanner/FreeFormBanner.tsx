@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   background-color: #ffedab;
 
   min-height: 400px;
-  padding: 48px 0;
+  padding: clamp(24px, 5vw, 48px) 0;
   overflow: hidden;
   position: relative;
 

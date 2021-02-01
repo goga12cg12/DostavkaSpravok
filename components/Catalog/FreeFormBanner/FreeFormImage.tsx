@@ -6,6 +6,11 @@ const Wrapper = styled.div`
   display: block;
   width: fill-available;
   max-width: 500px;
+
+  & img {
+    min-height: 240px;
+    object-fit: cover;
+  }
 `;
 
 interface FreeFormImageProps {}

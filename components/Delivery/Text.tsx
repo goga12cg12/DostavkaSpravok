@@ -12,11 +12,24 @@ const Actions = styled.div`
 
   & > * {
     background-color: #000;
-    margin-bottom: 20px;
+    margin-bottom: clamp(12px, 3.5vw, 20px);
     width: 220px;
   }
   & > *:not(:last-child) {
-    margin-right: 20px;
+    margin-right: clamp(12px, 3.5vw, 20px);
+  }
+  @media (max-width: 640px) {
+    & > * {
+      max-width: calc((100% - 3.5vw) / 2);
+      width: 100%;
+    }
+  }
+  @media (max-width: 400px) {
+    & > * {
+      max-width: 100%;
+      margin-right: 0 !important;
+      width: 100%;
+    }
   }
 
   & > a {

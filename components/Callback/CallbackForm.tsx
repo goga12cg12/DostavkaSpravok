@@ -54,6 +54,15 @@ const FormWrapper = styled.div`
       width: fit-content;
       padding: 0 20px;
     }
+
+    @media (max-width: 460px) {
+      & > label,
+      & > button {
+        margin: 10px 0;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
   }
 `;
 

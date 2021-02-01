@@ -53,11 +53,7 @@ export const Bottom: React.FC<BottomProps> = () => {
           ❤️
         </span>{" "}
         by{" "}
-        <a
-          href="http://snelsi.now.sh/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="http://snelsi.com/" target="_blank" rel="noopener noreferrer">
           Snelsi
         </a>{" "}
         © {date.getFullYear()}

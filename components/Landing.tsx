@@ -61,7 +61,8 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
 
-      & > button:not(:last-child) {
+      & > button:not(:last-child),
+      & > a:not(:last-child) {
         margin-right: 20px;
       }
 
@@ -74,11 +75,16 @@ const Wrapper = styled.div`
       @media (max-width: 640px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: clamp(12px, 3vw, 16px);
 
-        & > button {
+        & > button,
+        & > a {
+          margin: 0 !important;
           width: 100%;
         }
+      }
+      @media (max-width: 460px) {
+        grid-template-columns: 1fr;
       }
     }
   }
@@ -107,9 +113,9 @@ export const Landing: React.FC<LandingProps> = () => (
         <Button className="primary-button" onClick={openModal}>
           Сделать заказ
         </Button>
-        <Link to="about" smooth={true}>
-          <Button className="secondary-button">О нас</Button>
-        </Link>
+        <Button as={Link} to="about" smooth={true} className="secondary-button">
+          О нас
+        </Button>
       </div>
     </div>
     <div className="illustration">
