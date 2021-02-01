@@ -69,8 +69,8 @@ export default async (req, res) => {
 Дата осмотра:  ${prettyLocalDate(details?.inspectionDate)}`;
         break;
 
-      case "Флюрография":
-        text += `Тип справки:  <b>Флюрография</b>
+      case "Флюорография":
+        text += `Тип справки:  <b>Флюорография</b>
 Пол:  ${details?.sex}
 Дата осмотра:  ${prettyLocalDate(details?.inspectionDate)}`;
         break;

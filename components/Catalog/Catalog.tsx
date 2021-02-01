@@ -75,11 +75,11 @@ export const Catalog: React.FC<CatalogProps> = () => {
             </li>
             <li>
               <CatalogCard
-                title="Флюрография"
+                title="Флюорография"
                 footer="100 ₴"
                 src="/images/cards/Music.svg"
                 alt=""
-                type="Флюрография"
+                type="Флюорография"
               />
             </li>
             <li>

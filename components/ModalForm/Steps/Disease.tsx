@@ -45,7 +45,7 @@ export const Disease: React.FC<DiseaseProps> = () => {
       >
         <option>Больничный</option>
         <option>Профосмотр</option>
-        <option>Флюрография</option>
+        <option>Флюорография</option>
         <option>Справка в бассейн</option>
         <option>Справка о беременности</option>
         <option>Медкнижка</option>
@@ -60,7 +60,7 @@ export const Disease: React.FC<DiseaseProps> = () => {
 
       {field.value === "Больничный" && <SickLeave />}
       {field.value === "Профосмотр" && <Review />}
-      {field.value === "Флюрография" && <Fluorography />}
+      {field.value === "Флюорография" && <Fluorography />}
       {field.value === "Справка в бассейн" && <Pool />}
       {field.value === "Справка о беременности" && <Pregnancy />}
       {field.value === "Медкнижка" && <MedicalBook />}
